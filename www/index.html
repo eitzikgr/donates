@@ -33,6 +33,7 @@
   <script src="js/jquery-1.9.1.min.js"></script>
   <script src="js/jquery.mobile-1.3.1.min.js"></script>
   <script src="js/codiqa.ext.min.js"></script>
+          <script type="text/javascript" src="js/index.js"></script>
   <script src="js/tzdaka.js"></script>
         <title>Donate</title>
     </head>
@@ -266,13 +267,13 @@
               </h3>
           </div>
           <div id="line Balance billing" data-theme="d" data-role="footer">
-              <h3 id="heading Balance billing">
-                  נשאר לי לתרום : 330 ש"ח
+              <h3>
+                  נשאר לי לתרום :  <span id="heading_Balance_billing">0</span> ש"ח
               </h3>
           </div>
           <div data-theme="f" data-role="footer">
-              <h1 id="heading Tax credit">
-                  זיכוי לסעיף מס הכנסה : 250 ש"ח
+              <h1>
+                  זיכוי לסעיף מס הכנסה :  <span id="heading_Tax_credit">0</span> ש"ח
               </h1>
           </div>
       </div>
@@ -283,7 +284,7 @@
           <a id="botton Commitment" data-role="button" data-theme="b" href="#page8">
               התחייבויות שלי
           </a>
-          <a id="botton Settings" data-role="button" data-theme="b" href="#page12">
+          <a id="botton Settings" data-role="button" data-theme="b" href="#page_mydetails">
               הגדרות
           </a>
           <a id="bottton help" data-role="button" data-theme="b" href="#page10">
@@ -484,7 +485,7 @@
   </div>
   <div data-role="page" data-control-title="My Account" id="page7">
       <div data-theme="a" data-role="header">
-          <a data-role="button" href="#page12" data-icon="gear" data-iconpos="left"
+          <a data-role="button" href="#page_mydetails" data-icon="gear" data-iconpos="left"
           class="ui-btn-right">
               הגדרות
           </a>
@@ -514,7 +515,7 @@
           </h2>
       </div>
   </div>
-  <div data-role="page" data-control-title="Settings" id="page12">
+  <div data-role="page" data-control-title="Settings" id="page_mydetails">
       <div data-theme="a" data-role="header">
           <a data-role="button" href="#page1" class="ui-btn-left">
               בית
@@ -528,12 +529,12 @@
           <div data-role="navbar" data-iconpos="top">
               <ul>
                   <li>
-                      <a href="#page12" data-transition="fade" data-theme="" data-icon="">
+                      <a href="#page_mydetails" data-transition="fade" data-theme="" data-icon="">
                           איפוס אמצעי חיוב
                       </a>
                   </li>
                   <li>
-                      <a href="#page12" data-transition="fade" data-theme="" data-icon="">
+                      <a href="#page_mydetails" data-transition="fade" data-theme="" data-icon="">
                           איפוס מועדפים
                       </a>
                   </li>
@@ -543,17 +544,17 @@
       <div data-role="content">
           <form action="" class="תואר + שפה">
               <div data-role="fieldcontain" data-controltype="selectmenu">
-                  <label for="selectmenu5">
+                  <label for="details_title">
                       תואר
                   </label>
-                  <select id="selectmenu5" name="שפה" data-theme="b" data-mini="true">
-                      <option value="value">
+                  <select id="details_title" name="שפה" data-theme="b" data-mini="true">
+                      <option value="0">
                           ללא
                       </option>
-                      <option value="option1">
+                      <option value="1">
                           מר
                       </option>
-                      <option value="value">
+                      <option value="2">
                           הרב
                       </option>
                   </select>
@@ -571,29 +572,29 @@
           </form>
           <form action="" class="פרטים">
               <div data-role="fieldcontain" data-controltype="textinput" class="first name">
-                  <input name="שם פרטי" id="textinput13" placeholder="שם פרטי" value=""
+                  <input name="שם פרטי" id="details_fname" placeholder="שם פרטי" value=""
                   type="text" data-mini="true">
               </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="lest name">
-                  <input name="שם משפחה" id="textinput14" placeholder="שם משפחה" value=""
+                  <input name="שם משפחה" id="details_lname" placeholder="שם משפחה" value=""
                   type="text" data-mini="true">
               </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="mail">
-                  <input name="מייל" id="textinput15" placeholder="דואר אלקטרוני" value=""
+                  <input name="מייל" id="details_username" placeholder="אימייל/שם משתמש" value=""
                   type="email" data-mini="true">
               </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="password">
-                  <input name="סיסמא" id="textinput16" placeholder="סיסמא" value="" type="password"
+                  <input name="סיסמא" id="details_pass" placeholder="סיסמא" value="" type="password"
                   data-mini="true">
               </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="tel">
-                  <input name="טלפון" id="textinput17" placeholder="מספר טלפון נייד" value=""
+                  <input name="טלפון" id="details_phone" placeholder="מספר טלפון נייד" value=""
                   type="tel" data-mini="true">
               </div>
               <a data-role="button" href="#page1">
                   הבא
               </a>
-              <input type="submit" data-inline="true" data-theme="b" data-icon="arrow-l"
+              <input id="details_submit" type="submit" data-inline="true" data-theme="b" data-icon="arrow-l"
               data-iconpos="left" value="אישור" class="name">
           </form>
       </div>
