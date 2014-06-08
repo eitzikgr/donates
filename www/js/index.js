@@ -63,20 +63,10 @@ function loadDetails(){
              console.log("Ret:");
              console.log(res);
             if(res.status == 200) {
-               $("#headin_paid_this_month").text(res.actions.donated);
-               $("#heading_Balance_billing").text(res.actions.todonate);
-               $("#heading_Tax_credit").text(res.actions.taxdebit);
+                DonateObject=res;
+              
                 
-                //details_page
-                 $("#details_fname").val(res.user.firstname);
-                 $("#details_lname").val(res.user.lastname);
-                 $("#details_username").val(res.user.username);
-                 $("#details_phone").val(res.user.phone);
-                 //$("#details_title").val(res.user.title);
-                var titleValue=parseInt(res.user.title);
-                $("#details_title option").eq(titleValue).attr('selected', 'selected');
-                
-                $("#details_title").selectmenu("refresh", true);
+               
                 
             }
              else{
@@ -85,7 +75,7 @@ function loadDetails(){
             
     },
   error: function(err) {
-    alert(err);
+    //alert(err);
   }
 });
     

@@ -96,17 +96,17 @@
               </ul>
           </div>
           <a id="login" data-role="button" data-transition="pop" data-theme="b"
-          href="#page17">
+          href="#page_main">
               התחבר
           </a>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a id="after login" data-role="button" href="#page17">
+                  <a id="after login" data-role="button" href="#page_main">
                       הרשם בהמשך
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a id="login facebook" data-role="button" href="#page17">
+                  <a id="login facebook" data-role="button" href="#page_main">
                       פייסבוק
                   </a>
               </div>
@@ -119,7 +119,7 @@
           <h3 id="title Extended Help">
               מטרת האפליקציה
           </h3>
-          <a id="button home" data-role="button" data-theme="b" href="#page17" data-icon="ios-pack-color-home"
+          <a id="button home" data-role="button" data-theme="b" href="#page_main" data-icon="ios-pack-color-home"
           data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
@@ -198,7 +198,7 @@
           </a>
       </div>
   </div>
-  <div data-role="page" data-control-title="home" data-theme="b" id="page17">
+  <div data-role="page" data-control-title="home" data-theme="b" id="page_main">
       <div data-role="panel" id="panel8" data-position="left" data-display="push"
       data-theme="b">
           <ul data-role="listview" data-divider-theme="d" data-inset="false">
@@ -394,7 +394,7 @@
           </ul>
       </div>
       <div data-theme="a" data-role="header">
-          <a id="botton home" data-role="button" href="#page17" data-icon="ios-pack-color-home"
+          <a id="botton home" data-role="button" href="#page_main" data-icon="ios-pack-color-home"
           data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
@@ -560,6 +560,9 @@
                   </select>
               </div>
               <div data-role="fieldcontain" data-controltype="selectmenu">
+                   <label for="selectmenu6">
+                      שפה
+                  </label>
                   <select id="selectmenu6" name="שפה" data-theme="b" data-mini="true">
                       <option value="option1">
                           עברית
@@ -572,28 +575,41 @@
           </form>
           <form action="" class="פרטים">
               <div data-role="fieldcontain" data-controltype="textinput" class="first name">
+                   <label for="details_fname">
+                      שם פרטי
+                  </label>
                   <input name="שם פרטי" id="details_fname" placeholder="שם פרטי" value=""
                   type="text" data-mini="true">
               </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="lest name">
+                  <label for="details_lname">
+                      שם משפחה
+                  </label>
                   <input name="שם משפחה" id="details_lname" placeholder="שם משפחה" value=""
                   type="text" data-mini="true">
               </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="mail">
+                  <label for="details_username">
+                      אימייל
+                  </label>
                   <input name="מייל" id="details_username" placeholder="אימייל/שם משתמש" value=""
                   type="email" data-mini="true">
               </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="password">
+                  <label for="details_pass">
+                      סיסמא 
+                  </label>
                   <input name="סיסמא" id="details_pass" placeholder="סיסמא" value="" type="password"
                   data-mini="true">
               </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="tel">
+                  <label for="details_phone">
+                      טלפון
+                  </label>
                   <input name="טלפון" id="details_phone" placeholder="מספר טלפון נייד" value=""
                   type="tel" data-mini="true">
               </div>
-              <a data-role="button" href="#page1">
-                  הבא
-              </a>
+             
               <input id="details_submit" type="submit" data-inline="true" data-theme="b" data-icon="arrow-l"
               data-iconpos="left" value="אישור" class="name">
           </form>
@@ -653,7 +669,7 @@
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a id="button commitment total" data-role="button" href="#page17">
+                  <a id="button commitment total" data-role="button" href="#page_main">
                       להתחייבות
                   </a>
               </div>
@@ -711,7 +727,7 @@
               </label>
               <input name="" id="input Comment credit" placeholder="" value="" type="text">
           </div>
-          <a id="button fredit ok" data-role="button" data-theme="b" href="#page17">
+          <a id="button fredit ok" data-role="button" data-theme="b" href="#page_main">
               אישור
           </a>
       </div>
