@@ -1,7 +1,8 @@
 var DonateObject;
+ app.initialize();
 $(function() {
       
-    app.initialize();
+   
     
     
     $(document).on( "pageshow",'#page_main', function( event, ui ) {
