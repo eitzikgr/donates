@@ -1,5 +1,5 @@
 var DonateObject;
- app.initialize();
+ 
 $(function() {
       
    
