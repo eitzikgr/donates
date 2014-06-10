@@ -42,7 +42,7 @@ var app = {
         
         
         console.log('Received Event: ' + id);
-        //loadDetails();
+        loadDetails();
     }
 };
 
