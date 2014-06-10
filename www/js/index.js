@@ -34,7 +34,6 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        alert("deviceready");
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
@@ -86,8 +85,7 @@ function loadDetails(){
                 theme: 'b'
             });
         var url="http://customers.bontact.com/App_tromut/post.php?func=startAndGetObjet&token=hffd5hkjmnd-sdfdf-987fnj-kkk";
-    $.post(url, {}, function(res) {        
-   alert(res);
+    $.post(url, {}, function(res) {     
               res=$.parseJSON(res);
      // alert("convert json");
         
