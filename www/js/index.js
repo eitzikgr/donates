@@ -61,9 +61,12 @@ function loadDetails(){
   url: url,
   data: 'data',
   success: function(res) {
+            alert(res);
               res=$.parseJSON(res);
+      alert("convert json");
              console.log("Ret:");
              console.log(res);
+      alert("hide loading..");
         $.mobile.loading('hide');
            
             if(res.status == 200) {
