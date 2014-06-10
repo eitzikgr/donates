@@ -89,7 +89,7 @@ function loadDetails(){
     $.post(url, {}, function(res) {        
    
             alert(res);
-              res=$.parseJSON(res);
+            /*  res=$.parseJSON(res);
       alert("convert json");
              console.log("Ret:");
              console.log(res);
@@ -102,7 +102,7 @@ function loadDetails(){
             }
              else{
             alert(res.status);
-             }            
+             }       */     
     
 });
     }
