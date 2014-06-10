@@ -27,7 +27,6 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-            alert("bindEvents");
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     // deviceready Event Handler
@@ -48,6 +47,7 @@ var app = {
 };
 
 function loadDetails(){
+    try{
      jQuery.support.cors = true;
          $.mobile.loading( 'show', {
                 text: 'Please wait..',
@@ -68,9 +68,6 @@ function loadDetails(){
            
             if(res.status == 200) {
                 DonateObject=res;
-              
-                
-               
                 
             }
              else{
@@ -82,5 +79,9 @@ function loadDetails(){
     //alert(err);
   }
 });
-    
+    }
+    catch(e)
+    {
+    alert(e);
+    }
 }
