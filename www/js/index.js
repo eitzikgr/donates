@@ -42,10 +42,41 @@ var app = {
         
         
         console.log('Received Event: ' + id);
-        loadDetails();
+        if(checkConnection())
+            loadDetails();
     }
 };
-
+function checkConnection() {
+     try{
+     var networkState = (navigator.connection)?navigator.connection.type:navigator.network.connection.type;
+     //networkState=Connection.NONE;
+       
+    var Conn=(navigator.connection)?navigator.connection.__proto__:Connection;       
+     var states = {};
+        states[Conn.UNKNOWN]  = 'Unknown connection';
+        states[Conn.ETHERNET] = 'Ethernet connection';
+        states[Conn.WIFI]     = 'WiFi connection';
+        states[Conn.CELL_2G]  = 'Cell 2G connection';
+        states[Conn.CELL_3G]  = 'Cell 3G connection';
+        states[Conn.CELL_4G]  = 'Cell 4G connection';
+        states[Conn.NONE]     = 'No network connection';
+    
+     if(networkState== Conn.NONE){
+        navigator.notification.alert('Your device is not connected to the network',  // message
+            function(){},         // callback
+            'Menu',            // title
+            'Done'  );
+         
+         return false;
+        }
+     else{
+        return true;
+     }
+        //alert('Connection type: ' + states[networkState]);    
+    }
+     catch(e){console.log("Err: "+e);
+             console.log(e);}
+ }
 function loadDetails(){
     try{
      jQuery.support.cors = true;
@@ -55,12 +86,8 @@ function loadDetails(){
                 theme: 'b'
             });
         var url="http://customers.bontact.com/App_tromut/post.php?func=startAndGetObjet&token=hffd5hkjmnd-sdfdf-987fnj-kkk";
-    
-    $.ajax({
-  type: "POST",
-  url: url,
-  data: 'data',
-  success: function(res) {
+    $.post(url, {}, function(res) {        
+   
             alert(res);
               res=$.parseJSON(res);
       alert("convert json");
@@ -75,12 +102,8 @@ function loadDetails(){
             }
              else{
             alert(res.status);
-             }
-            
-    },
-  error: function(err) {
-    //alert(err);
-  }
+             }            
+    
 });
     }
     catch(e)
