@@ -85,12 +85,12 @@ function loadDetails(){
                 textVisible: true,
                 theme: 'b'
             });
-        var url="http://customers.bontact.com/App_tromut/post.php";//?func=startAndGetObjet&token=hffd5hkjmnd-sdfdf-987fnj-kkk";
+        var url="http://customers.bontact.com/App_tromut/post.php?func=startAndGetObjet&token=hffd5hkjmnd-sdfdf-987fnj-kkk";
     $.post(url, {}, function(res) {        
    alert(res);
               res=$.parseJSON(res);
      // alert("convert json");
-        /*
+        
              console.log("Ret:");
              console.log(res);
       //alert("hide loading..");
@@ -103,7 +103,7 @@ function loadDetails(){
              else{
             alert(res.status);
              }           
-    */
+    
 });
     }
     catch(e)
