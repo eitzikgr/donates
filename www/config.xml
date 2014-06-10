@@ -96,5 +96,30 @@
         <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
         <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
     -->
-
+<gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.vibration" version="0.3.0" />
+    <gap:plugin name="org.apache.cordova.network-information" version="0.2.3"/>
+    <gap:plugin name="com.phonegap.plugins.pushplugin"  />
+    <feature name="App">
+        <param name="android-package" value="org.apache.cordova.App" />
+    </feature>
+    <feature name="LocalStorage">
+        <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+    <feature name="Vibration">
+        <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
+    </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+         <param name="ios-package" value="CDVNotification" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.NetworkManager" />
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
+    <feature name="PushPlugin">
+      <param name="android-package" value="com.plugin.gcm.PushPlugin" />
+         <param name="ios-package" value="PushPlugin" />
+    </feature>
 </widget>
