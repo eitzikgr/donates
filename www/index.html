@@ -43,19 +43,16 @@
           
         <title>Donate</title>
     </head>
-    <body>
-      
-           
-           
-  <div data-role="page" data-control-title="First time" data-theme="b" id="page5">
+   <body>
+   <div data-role="page" data-control-title="First_time" data-theme="b" id="first_page">
       <div id="title" data-theme="a" data-role="header">
-          <h3 id="title welcome">
+          <h3 id="title_welcome">
               תרומה באפליקציה
           </h3>
       </div>
       <div data-role="content">
-          <div style="width: 270px; height: 100px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;"
-          data-controltype="image" id="logo image">
+          <div style="width: 270px; height: 80px; position: relative; background-color: #fbfbfb; border: 1px solid #b8b8b8;"
+          data-controltype="image" id="logo_image">
               <img src="https://codiqa.com/static/images/v2/image.png" alt="image" style="position: absolute; top: 50%; left: 50%; margin-left: -16px; margin-top: -18px">
           </div>
           <div id="Description" data-controltype="textblock">
@@ -101,37 +98,53 @@
                   </ul>
               </ul>
           </div>
-          <a id="login" data-role="button" data-transition="pop" data-theme="b"
-          href="#page_main">
-              התחבר
-          </a>
+          <div data-role="fieldcontain" data-controltype="textinput">
+              <input name="" id="User_selphone" placeholder="מספר טלפון" value="" type="tel"
+              data-mini="true">
+          </div>
+          <div data-role="fieldcontain" data-controltype="textinput">
+              <input name="" id="user_password" placeholder="סיסמה" value="" type="password"
+              data-mini="true">
+          </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a id="after login" data-role="button" href="#page_main">
+                  <a id="login" data-role="button" href="#home_page">
+                      התחבר
+                  </a>
+              </div>
+              <div class="ui-block-b">
+                  <a id="new_account" data-role="button" href="#home_page">
+                      משתמש חדש
+                  </a>
+              </div>
+          </div>
+          <div class="ui-grid-a">
+              <div class="ui-block-a">
+                  <a id="afyer_login" data-role="button" href="#home_page">
                       הרשם בהמשך
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a id="login facebook" data-role="button" href="#page_main">
+                  <a id="login_facebook" data-role="button" href="#home_page">
                       פייסבוק
                   </a>
               </div>
           </div>
       </div>
   </div>
-  <div data-role="page" data-control-title="Extended Help" data-theme="b"
-  id="page6">
+  <div data-role="page" data-control-title="Extended_Help" data-theme="b"  id="Extended_Help_page">
       <div id="title" data-theme="a" data-role="header">
-          <h3 id="title Extended Help">
+          <h3 id="title_Extended_Help">
               מטרת האפליקציה
           </h3>
-          <a id="button home" data-role="button" data-theme="b" href="#page_main" data-icon="ios-pack-color-home"
-          data-iconpos="left" data-iconsize="26" class="ui-btn-left">
+          <a id="button_home" data-role="button" data-theme="b" href="#home_page"
+          data-icon="ios-pack-color-home" data-iconpos="left" data-iconsize="26"
+          class="ui-btn-left">
               בית
           </a>
       </div>
       <div data-role="content">
-          <div id="text help" data-controltype="textblock">
+          <div id="text_help" data-controltype="textblock">
               <ul>
                   <li dir="RTL" data-mce-style="text-align: right;" style="text-align: right;">
                       <h4>
@@ -199,12 +212,12 @@
               </h4>
           </div>
           <a id="button help" data-role="button" data-direction="reverse" data-transition="flow"
-          href="#page10">
+          href="#help_page">
               חזור
           </a>
       </div>
   </div>
-  <div data-role="page" data-control-title="home" data-theme="b" id="page_main">
+  <div data-role="page" data-control-title="home" data-theme="b" id="home_page">
       <div data-role="panel" id="panel8" data-position="left" data-display="push"
       data-theme="b">
           <ul data-role="listview" data-divider-theme="d" data-inset="false">
@@ -221,7 +234,7 @@
                   יוסף בן יהודית
               </li>
               <li data-theme="">
-                  <a href="#page11" data-transition="slidefade">
+                  <a href="#Contact_page" data-transition="slidefade">
                       להנצחת שם ולתרומה
                       <span class="ui-li-count">
                           לחץ כאן
@@ -246,7 +259,7 @@
                   יוסף בן יהודית
               </li>
               <li data-theme="">
-                  <a href="#page11" data-transition="slidefade">
+                  <a href="#Contact_page" data-transition="slidefade">
                       להנצחת שם ולתרומה
                       <span class="ui-li-count">
                           לחץ כאן
@@ -255,48 +268,44 @@
               </li>
           </ul>
       </div>
-      <div id="line Tax credit" data-theme="a" data-role="header">
-          <a id="button exit" data-role="button" href="#page1" data-icon="delete"
-          data-iconpos="left" class="ui-btn-right">
-              התנתק
-          </a>
-          <a id="botton My Account" data-role="button" href="#page7" data-icon="gear"
+      <div id="line_Tax_credit" data-theme="a" data-role="header">
+          <a id="botton_My_Account" data-role="button" href="#My_Account_page" data-icon="gear"
           data-iconpos="left" class="ui-btn-left">
               החשבון שלי
           </a>
-          <h3 id="title home">
+          <h3 id="title_home">
               בית
           </h3>
-          <div id="line paid this month" data-theme="d" data-role="footer">
+          <div id="line_paid_this_month" data-theme="d" data-role="footer">
               <h3 >
-                  תרמתי החודש : <span id="headin_paid_this_month">0</span> ש"ח
+                  תרמתי החודש : <span class="heading_paid_this_month"></span> ש"ח
               </h3>
           </div>
-          <div id="line Balance billing" data-theme="d" data-role="footer">
-              <h3>
-                  נשאר לי לתרום :  <span id="heading_Balance_billing">0</span> ש"ח
+          <div id="line_Balance_billing" data-theme="d" data-role="footer">
+              <h3 >
+                  נשאר לי לתרום : <span class="heading_Balance_billing"></span> ש"ח
               </h3>
           </div>
           <div data-theme="f" data-role="footer">
               <h1>
-                  זיכוי לסעיף מס הכנסה :  <span id="heading_Tax_credit">0</span> ש"ח
+                  זיכוי לסעיף מס הכנסה : <span class="heading_Tax_credit"></span> ש"ח
               </h1>
           </div>
       </div>
       <div data-role="content">
-          <a id="botton paid" data-role="button" data-theme="b" href="#page4">
+          <a id="botton_paid" data-role="button" data-theme="b" href="#paid_page">
               תרום
           </a>
-          <a id="botton Commitment" data-role="button" data-theme="b" href="#page8">
+          <a id="botton_Commitment" data-role="button" data-theme="b" href="#Commitment_page">
               התחייבויות שלי
           </a>
-          <a id="botton Settings" data-role="button" data-theme="b" href="#page_mydetails">
+          <a id="botton_Settings" data-role="button" data-theme="b" href="#Settings_page">
               הגדרות
           </a>
-          <a id="bottton help" data-role="button" data-theme="b" href="#page10">
+          <a id="bottton_help" data-role="button" data-theme="b" href="#help_page">
               עזרה
           </a>
-          <a id="button panel Perpetuate" data-controltype="panelbutton" data-role="button"
+          <a id="button_panel_Perpetuate" data-controltype="panelbutton" data-role="button"
           data-inline="false" data-theme="b" href="#panel8">
               לעילוי נשמת
           </a>
@@ -318,7 +327,7 @@
           </div>
       </div>
   </div>
-  <div data-role="page" data-control-title="paid" data-theme="b" id="page4">
+  <div data-role="page" data-control-title="paid" data-theme="b" id="paid_page">
       <div data-role="panel" id="panel5" data-position="left" data-display="push"
       data-theme="b">
           <ul data-role="listview" data-divider-theme="b" data-inset="false">
@@ -399,42 +408,42 @@
               </li>
           </ul>
       </div>
-      <div data-theme="a" data-role="header">
-          <a id="botton home" data-role="button" href="#page_main" data-icon="ios-pack-color-home"
+      <div id="header" data-theme="a" data-role="header">
+          <a id="botton_home" data-role="button" href="#home_page" data-icon="ios-pack-color-home"
           data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
-          <h3 id="heading paid">
+          <h3 id="heading_paid">
               תרומה
           </h3>
       </div>
       <div data-role="content">
-          <a id="button Credit commitment" data-role="button" href="#page19">
-              זיכוי תרומה מזמנת
+          <a id="button_Credit_commitment" data-role="button" href="#Credit_commitment_page">
+              זיכוי תרומה מזדמנת
           </a>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="fast serch Organization">
+              <label for="fast_serch_Organization">
                   חיפוש מהיר
               </label>
-              <input name="" id="fast serch Organization" placeholder="שם עמותה / מס עמותה"
+              <input name="" id="fast_serch_Organization" placeholder="שם עמותה / מס עמותה"
               value="" type="text" data-mini="true">
           </div>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="some paid">
+              <label for="some_paid">
                   סכום התרומה
               </label>
-              <input name="" id="some paid" placeholder="" value="" type="number" data-mini="true">
+              <input name="" id="some_paid" placeholder="" value="" type="number" data-mini="true">
           </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a id="button panel  Favorites" data-controltype="panelbutton" data-role="button"
+                  <a id="button_panel_Favorites" data-controltype="panelbutton" data-role="button"
                   data-inline="false" data-theme="b" href="#panel2" data-icon="ios-pack-color-star"
                   data-iconpos="left" data-iconsize="26">
                       מועדפים
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a id="button Search Organization" data-role="button" href="#page14" data-icon="ios-pack-color-search"
+                  <a id="button_Search_Organization" data-role="button" href="#page14" data-icon="ios-pack-color-search"
                   data-iconpos="left" data-iconsize="26">
                       חיפוש
                   </a>
@@ -442,42 +451,46 @@
           </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a id="button panel Featured" data-controltype="panelbutton" data-role="button"
+                  <a id="button_panel_Featured" data-controltype="panelbutton" data-role="button"
                   data-inline="false" href="#panel5" data-icon="ios-pack-color-plus" data-iconpos="left"
                   data-iconsize="26">
                       מומלצים
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a id="button panel history" data-controltype="panelbutton" data-role="button"
+                  <a id="button_panel_history" data-controltype="panelbutton" data-role="button"
                   data-inline="false" href="#panel4" data-icon="ios-pack-color-info" data-iconpos="left"
                   data-iconsize="26">
                       היסטוריה
                   </a>
               </div>
           </div>
-          <a id="button paid ok" data-role="button" data-theme="a" href="#page13"
+          <a id="button_paid_ok" data-role="button" data-theme="a" href="#page13"
           data-icon="ios-pack-color-check" data-iconpos="left" data-iconsize="26">
               אשר תרומה
           </a>
-          <div id="radio Recurring Billing" data-role="fieldcontain" data-controltype="radiobuttons">
-              <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
-                  <input id="radio3" name="" value="radio3" type="radio">
+          <div id="radio_Recurring_Billing" data-role="fieldcontain" data-controltype="radiobuttons">
+              <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                  <input id="radio3" name="" value="radio3" data-theme="d" type="radio">
                   <label for="radio3">
                       חיוב חד פעמי
                   </label>
-                  <input id="radio1" name="" value="radio1" type="radio">
+                  <input id="radio1" name="" value="day" data-theme="d" type="radio">
                   <label for="radio1">
-                      חיוב קבוע כל יום
+                      חיוב יומי
                   </label>
-                  <input id="radio2" name="" value="radio2" data-theme="b" type="radio">
+                  <input id="radio2" name="" value="month" data-theme="d" type="radio">
                   <label for="radio2">
-                      חיוב קבוע כל חודש
+                      חיוב חודשי
+                  </label>
+                  <input id="radio4" name="" value="help" type="radio">
+                  <label for="radio4">
+                      ?
                   </label>
               </fieldset>
           </div>
           <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
-          <div id="button ADV" data-role="navbar" data-iconpos="top">
+          <div id="button_ADV" data-role="navbar" data-iconpos="top">
               <ul>
                   <li>
                       <a href="#page13" data-transition="flow" data-theme="b" data-icon="arrow-l">
@@ -489,87 +502,209 @@
           <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
       </div>
   </div>
-  <div data-role="page" data-control-title="My Account" id="page7">
-      <div data-theme="a" data-role="header">
-          <a data-role="button" href="#page_mydetails" data-icon="gear" data-iconpos="left"
-          class="ui-btn-right">
+  <div data-role="page" data-control-title="My_Account" data-theme="b" id="My_Account_page">
+      <div data-role="panel" id="panel18" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  פקודות התחיבות לתרומה
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      הערות
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      פרטים נוספים
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-role="panel" id="panel17" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  פקודות היסטוריה
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      קבלת קבלה למייל
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      פרטים נוספים
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-role="panel" id="panel16" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  פקודות היסטוריה
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      קבלת קבלה למייל
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      פרטים נוספים
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-role="panel" id="panel15" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  פקודות להוראת קבע
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      ביטול הוראת קבע
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      קבלת קבלה למייל
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      פרטים נוספים
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div data-role="panel" id="panel9" data-position="left" data-display="reveal"
+      data-theme="a">
+          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+              <li data-role="list-divider" role="heading">
+                  פקודות להוראת קבע
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      ביטול הוראת קבע
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      קבלת קבלה למייל
+                  </a>
+              </li>
+              <li data-theme="a">
+                  <a href="#first_page" data-transition="slide">
+                      פרטים נוספים
+                  </a>
+              </li>
+          </ul>
+      </div>
+      <div id="header" data-theme="a" data-role="header">
+          <a id="button_setting" data-role="button" href="#Settings_page" data-icon="gear"
+          data-iconpos="left" class="ui-btn-right">
               הגדרות
           </a>
-          <a data-role="button" href="#page1" class="ui-btn-left">
+          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
-          <h3>
+          <h3 id="heading_title">
               החשבון שלי
           </h3>
-          <div data-role="navbar" data-iconpos="top">
+      </div>
+      <div data-role="content">
+          <div id="button_Billing_or_history" data-role="navbar" data-iconpos="top">
               <ul>
                   <li>
-                      <a href="#page7" data-transition="fade" data-theme="b" data-icon="">
-                          דף חשבון
+                      <a href="#My_Account_page" data-transition="fade" data-theme="" data-icon="edit">
+                          הוראת קבע
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#My_Account_page" data-transition="fade" data-theme="a" data-icon="check">
+                          היסטוריה
                       </a>
                   </li>
               </ul>
           </div>
-      </div>
-      <div data-role="content">
-          <h2>
-              רשימה של חשבונות פעילים
-          </h2>
-          <hr style="height:5px; background-color:#000; border:0; margin-top:12px; margin-bottom:12px;">
-          <h2>
-              היסטוריה תרומות
-          </h2>
+          <a id="Monthly_charge" data-controltype="panelbutton" data-role="button"
+          data-inline="false" href="#panel9" data-icon="bars" data-iconpos="left">
+              באר החיים : חודשי : 50 ש"ח
+          </a>
+          <a id="Daily_charge" data-controltype="panelbutton" data-role="button"
+          data-inline="false" href="#panel15" data-icon="bars" data-iconpos="left">
+              עזר מציון : יומי : 5 ש"ח
+          </a>
+          <a id="Payment_History_1" data-controltype="panelbutton" data-role="button"
+          data-inline="false" href="#panel16" data-icon="bars" data-iconpos="left">
+              יד שרה : 20/6/2014 : 50 - ש"ח
+          </a>
+          <a id="Payment_History_2" data-controltype="panelbutton" data-role="button"
+          data-inline="false" href="#panel17" data-icon="bars" data-iconpos="left">
+              באר החיים : 25/6/2014 : 50 - ש"ח
+          </a>
+          <a id="History_liabilities" data-controltype="panelbutton" data-role="button"
+          data-inline="false" href="#panel18" data-icon="bars" data-iconpos="left">
+              התחייבות : 25/6/2014 : 350 ש"ח
+          </a>
       </div>
   </div>
-  <div data-role="page" data-control-title="Settings" id="page_mydetails">
-      <div data-theme="a" data-role="header">
-          <a data-role="button" href="#page1" class="ui-btn-left">
+  <div data-role="page" data-control-title="Settings" data-theme="b" id="Settings_page">
+      <div id="heading" data-theme="a" data-role="header">
+          <a id="button_log_out" data-role="button" href="#Settings_page" data-icon="ios-pack-color-delete"
+          data-iconpos="left" data-iconsize="26" class="ui-btn-right">
+              התנתק
+          </a>
+          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
-          <h2>
+          <h2 id="heading_title_1">
               הגדרות
           </h2>
-          <h2>
+          <h2 id="heading_title_2">
               פרטיים אישיים
           </h2>
-          <div data-role="navbar" data-iconpos="top">
-              <ul>
-                  <li>
-                      <a href="#page_mydetails" data-transition="fade" data-theme="" data-icon="">
-                          איפוס אמצעי חיוב
-                      </a>
-                  </li>
-                  <li>
-                      <a href="#page_mydetails" data-transition="fade" data-theme="" data-icon="">
-                          איפוס מועדפים
-                      </a>
-                  </li>
-              </ul>
-          </div>
       </div>
       <div data-role="content">
+          <div id="grid_button" class="ui-grid-a">
+              <div class="ui-block-a">
+                  <a id="button_del_Favorites" data-role="button" data-theme="a" href="#Settings_page">
+                      מחק מועדפים
+                  </a>
+              </div>
+              <div class="ui-block-b">
+                  <a id="button_del_credit_card" data-role="button" data-theme="a" href="#Settings_page">
+                      מחק אשראי
+                  </a>
+              </div>
+          </div>
           <form action="" class="תואר + שפה">
               <div data-role="fieldcontain" data-controltype="selectmenu">
-                  <label for="details_title">
+                  <label for="slect_Degree">
                       תואר
                   </label>
-                  <select id="details_title" name="שפה" data-theme="b" data-mini="true">
-                      <option value="0">
+                  <select id="slect_Degree" name="שפה" data-theme="b" data-mini="true">
+                      <option value="value">
                           ללא
                       </option>
-                      <option value="1">
+                      <option value="option1">
                           מר
                       </option>
-                      <option value="2">
+                      <option value="value">
                           הרב
                       </option>
                   </select>
               </div>
               <div data-role="fieldcontain" data-controltype="selectmenu">
-                   <label for="selectmenu6">
+                  <label for="select_Language">
                       שפה
                   </label>
-                  <select id="selectmenu6" name="שפה" data-theme="b" data-mini="true">
+                  <select id="select_Language" name="שפה" data-theme="b" data-mini="true">
                       <option value="option1">
                           עברית
                       </option>
@@ -579,141 +714,124 @@
                   </select>
               </div>
           </form>
-          <form action="" class="פרטים">
+          <form id="form_setting" action="" class="פרטים">
               <div data-role="fieldcontain" data-controltype="textinput" class="first name">
-                   <label for="details_fname">
-                      שם פרטי
-                  </label>
-                  <input name="שם פרטי" id="details_fname" placeholder="שם פרטי" value=""
+                  <input name="שם פרטי" id="input_first_name" placeholder="שם פרטי" value=""
                   type="text" data-mini="true">
               </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="lest name">
-                  <label for="details_lname">
-                      שם משפחה
-                  </label>
-                  <input name="שם משפחה" id="details_lname" placeholder="שם משפחה" value=""
+                  <input name="שם משפחה" id="input_last_name" placeholder="שם משפחה" value=""
                   type="text" data-mini="true">
               </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="mail">
-                  <label for="details_username">
-                      אימייל
-                  </label>
-                  <input name="מייל" id="details_username" placeholder="אימייל/שם משתמש" value=""
+                  <input name="מייל" id="input_mail" placeholder="דואר אלקטרוני" value=""
                   type="email" data-mini="true">
               </div>
-              <div data-role="fieldcontain" data-controltype="textinput" class="password">
-                  <label for="details_pass">
-                      סיסמא 
-                  </label>
-                  <input name="סיסמא" id="details_pass" placeholder="סיסמא" value="" type="password"
-                  data-mini="true">
-              </div>
               <div data-role="fieldcontain" data-controltype="textinput" class="tel">
-                  <label for="details_phone">
-                      טלפון
-                  </label>
-                  <input name="טלפון" id="details_phone" placeholder="מספר טלפון נייד" value=""
-                  type="tel" data-mini="true">
+                  <input name="טלפון" id="input_sellphon" placeholder="מספר טלפון נייד"
+                  value="" type="tel" data-mini="true">
               </div>
-             
-              <input id="details_submit" type="submit" data-inline="true" data-theme="b" data-icon="arrow-l"
-              data-iconpos="left" value="אישור" class="name">
+              <a id="change_passwod" data-role="button" data-inline="true" href="#Settings_page">
+                  שינוי סיסמה
+              </a>
+              <input type="submit" data-inline="true" data-theme="b" data-icon="arrow-l"
+              data-iconpos="left" value=" אישור" class="name">
           </form>
       </div>
   </div>
-  <div data-role="page" data-control-title="Commitment" data-theme="b" id="page8">
+  <div data-role="page" data-control-title="Commitment" data-theme="b" id="Commitment_page">
       <div id="title" data-theme="a" data-role="header">
-          <a id="button my account" data-role="button" href="#page7" data-icon="ios-pack-color-grid"
+          <a id="button_my_account" data-role="button" href="#My_Account_page" data-icon="ios-pack-color-grid"
           data-iconpos="left" data-iconsize="26" class="ui-btn-right">
               דף חשבון
           </a>
-          <a id="button home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
           data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
-          <h3 id="title commitment">
+          <h3 id="title_commitment">
               חישוב מעשרות
           </h3>
-          <div id="line paid this month" data-theme="d" data-role="footer" data-position="fixed">
-              <h3 id="heading paid this month">
-                  תרמתי החודש : 170 ש"ח
+          <div id="line_paid_this_month" data-theme="d" data-role="footer">
+              <h2 >
+                  תרמתי החודש : <span class="heading_paid_this_month"></span> ש"ח
+              </h2>
+          </div>
+          <div id="line_Balance_billing" data-theme="d" data-role="footer">
+              <h3>
+                  נשאר לי לתרום : <span class="heading_Balance_billing"></span> ש"ח
               </h3>
           </div>
-          <div id="line Balance billing" data-theme="d" data-role="footer" data-position="fixed">
-              <h3 id="heading Balance billing">
-                  נשאר לי לתרום : 330 ש"ח
-              </h3>
-          </div>
-          <div id="line Tax credit" data-theme="a" data-role="footer" data-position="fixed">
-              <h3 id="heading Tax credit">
-                  זיכוי לסעיף מס הכנסה : 250 ש"ח
+          <div id="line_Tax_credit" data-theme="a" data-role="footer">
+              <h3 >
+                  זיכוי לסעיף מס הכנסה : <span class="heading_Tax_credit"></span> ש"ח
               </h3>
           </div>
       </div>
       <div data-role="content">
-          <div id="text help commitment" data-controltype="textblock">
+          <div id="text_help_commitment" data-controltype="textblock">
               <address data-mce-style="text-align: right;" style="text-align: right;">
                   <span style="font-size: large; font-family: 'arial black', 'avant garde';">
                       במסך זה תוכלו לחשב את חיוב המעשרות החודשי שלכם והתחייבות שלכם לתרומה
                   </span>
               </address>
           </div>
-          <a id="button Calculator" data-role="button" data-transition="flip" href="#page16">
+          <a id="button_Calculator" data-role="button" data-transition="flip" href="#Calculator_page">
               מחשבון מעשרות
           </a>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="input total paid">
+              <label for="input_total_paid">
                   סה"כ התחיבות לתרומה
               </label>
-              <input name="" id="input total paid" placeholder="ש&quot;ח " value=""
+              <input name="" id="input_total_paid" placeholder="ש&quot;ח " value=""
               type="number">
           </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a id="button paid total" data-role="button" href="#page4">
+                  <a id="button_paid total" data-role="button" href="#paid_page">
                       לתרומה
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a id="button commitment total" data-role="button" href="#page_main">
+                  <a id="button_commitment_total" data-role="button" href="#home_page">
                       להתחייבות
                   </a>
               </div>
           </div>
       </div>
   </div>
-  <div data-role="page" data-control-title="Credit commitment" data-theme="b"
-  id="page19">
-      <div data-theme="a" data-role="header">
-          <a data-role="button" href="#page7" data-icon="ios-pack-color-grid" data-iconpos="left"
-          data-iconsize="26" class="ui-btn-right">
+  <div data-role="page" data-control-title="Credit_commitment" data-theme="b"
+  id="Credit_commitment_page">
+      <div id="header" data-theme="a" data-role="header">
+          <a id="button_my_account" data-role="button" href="#My_Account_page" data-icon="ios-pack-color-grid"
+          data-iconpos="left" data-iconsize="26" class="ui-btn-right">
               דף חשבון
           </a>
-          <a data-role="button" href="#page1" data-icon="ios-pack-color-home" data-iconpos="left"
-          data-iconsize="26" class="ui-btn-left">
+          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
-          <h3>
+          <h3 id="heading_title">
               חישוב מעשרות
           </h3>
-          <div data-theme="d" data-role="footer" data-position="fixed">
-              <h3>
-                  תרמתי החודש : 170 ש"ח
+          <div id="line_paid_this_month" data-theme="d" data-role="footer">
+              <h3 >
+                  תרמתי החודש : <span class="heading_paid_this_month"></span> ש"ח
               </h3>
           </div>
-          <div data-theme="d" data-role="footer" data-position="fixed">
-              <h3>
-                  נשאר לי לתרום : 330 ש"ח
+          <div id="line_Balance billing" data-theme="d" data-role="footer">
+              <h3 >
+                  נשאר לי לתרום : <span class="heading_Balance_billing"></span> ש"ח
               </h3>
           </div>
-          <div data-theme="a" data-role="footer" data-position="fixed">
-              <h3>
-                  זיכוי לסעיף מס הכנסה : 250 ש"ח
+          <div id="line_Tax_credit" data-theme="a" data-role="footer">
+              <h3 >
+                  זיכוי לסעיף מס הכנסה : <span class="heading_Tax_credit"></span> ש"ח
               </h3>
           </div>
       </div>
       <div data-role="content">
-          <div id="text help credit commitment" data-controltype="textblock">
+          <div id="text_help_credit_commitment" data-controltype="textblock">
               <address data-mce-style="text-align: right;" style="text-align: right;">
                   <span style="font-size: large; font-family: 'arial black', 'avant garde';"
                   data-mce-style="font-size: large; font-family: 'arial black', 'avant garde';">
@@ -722,94 +840,102 @@
               </address>
           </div>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="input credit ">
+              <label for="input_credit ">
                   סכום לזיכוי חשבון תרומה
               </label>
-              <input name="" id="input credit " placeholder="ש&quot;ח " value="" type="number">
+              <input name="" id="input_credit " placeholder="ש&quot;ח " value="" type="number">
           </div>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="input Comment credit">
+              <label for="input_Comment_credit">
                   הערות שלי
               </label>
-              <input name="" id="input Comment credit" placeholder="" value="" type="text">
+              <input name="" id="input_Comment_credit" placeholder="" value="" type="text">
           </div>
-          <a id="button fredit ok" data-role="button" data-theme="b" href="#page_main">
+          <a id="button_fredit_ok" data-role="button" data-theme="b" href="#home_page"
+          data-icon="ios-pack-color-check" data-iconpos="left" data-iconsize="26">
               אישור
           </a>
       </div>
   </div>
-  <div data-role="page" data-control-title="Contact" id="page11">
-      <div data-theme="a" data-role="header">
-          <a data-role="button" href="#page1" class="ui-btn-left">
+  <div data-role="page" data-control-title="Contact" data-theme="b" id="Contact_page">
+      <div id="heding" data-theme="a" data-role="header">
+          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
-          <h3>
+          <h3 id="heading_title">
               צור קשר
           </h3>
       </div>
       <div data-role="content">
           <div data-role="fieldcontain" data-controltype="selectmenu">
-              <label for="selectmenu4">
+              <label for="select_Reason">
                   סיבת הפניה
               </label>
-              <select id="selectmenu4" name="">
-                  <option value="option1">
+              <select id="select_Reason" name="">
+                  <option value="תרומה">
                       לתרומה
                   </option>
-                  <option value="value">
+                  <option value="הנצחה">
                       הנצחת שם
                   </option>
-                  <option value="value">
+                  <option value="ברור">
                       שאלות וברורים
                   </option>
-                  <option value="value">
+                  <option value="תמיכה">
                       מחלקת תמיכה
                   </option>
-                  <option value="value">
+                  <option value="הצטרפות">
                       להצטרפות לרשימת התרומות
                   </option>
               </select>
           </div>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput11">
+              <label for="input_name">
                   שם פרטי ומשפחה
               </label>
-              <input name="" id="textinput11" placeholder="" value="" type="text">
+              <input name="" id="input_name" placeholder="" value="" type="text">
           </div>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput12">
+              <label for="input_selphon">
                   טלפון
               </label>
-              <input name="" id="textinput12" placeholder="" value="" type="text">
+              <input name="" id="input_selphon" placeholder="" value="" type="tel">
           </div>
-          <a data-role="button" href="#page1">
+          <div data-role="fieldcontain" data-controltype="textinput">
+              <label for="input_Reason">
+                  הערות
+              </label>
+              <input name="" id="input_Reason" placeholder="" value="" type="text">
+          </div>
+          <a id="button_send" data-role="button" href="#page1">
               אישור
           </a>
-          <h2>
+          <h2 id="heding_Personal_Information">
               ניתן לפנות אלינו בכל שאלה
           </h2>
-          <div data-controltype="textblock">
-              <p style="text-align: right;">
+          <div id="text_Personal_Information" data-controltype="textblock">
+              <p>
                   <b>
                       צדקה באפליקציה
                   </b>
               </p>
-              <p style="text-align: right;">
+              <p style="text-align: right;" data-mce-style="text-align: right;">
                   <b>
                       ת.ד. 5454 ירושלים
                   </b>
               </p>
-              <p style="text-align: right;">
+              <p style="text-align: right;" data-mce-style="text-align: right;">
                   <b>
                       טלפון : 02-56565656
                   </b>
               </p>
-              <p style="text-align: right;">
+              <p style="text-align: right;" data-mce-style="text-align: right;">
                   <b>
                       פקס: 02-56565656
                   </b>
               </p>
-              <p style="text-align: right;">
+              <p style="text-align: right;" data-mce-style="text-align: right;">
                   <b>
                       דוא"ל: m.hfdhfh@gmail.com
                   </b>
@@ -817,115 +943,85 @@
           </div>
       </div>
   </div>
-  <div data-role="page" data-control-title="help" id="page10">
-      <div data-theme="a" data-role="header">
-          <a data-role="button" href="#page1" class="ui-btn-left">
+  <div data-role="page" data-control-title="help" data-theme="b" id="help_page">
+      <div id="header" data-theme="a" data-role="header">
+          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
-          <h3>
+          <h3 id="heading_title">
               עזרה
           </h3>
       </div>
       <div data-role="content">
-          <a data-role="button" href="#page6">
+          <a id="button_page_extended_help" data-role="button" data-theme="b" href="#Extended_Help_page">
               איך משתמשים באפליקציית הצדקה
           </a>
-          <a data-role="button" href="#page11">
-              צור קשר
-          </a>
-          <div data-role="collapsible-set" data-theme="b" data-content-theme="b">
-              <div data-role="collapsible">
+          <div id="collapible_Questions" data-role="collapsible-set" data-theme="b"
+          data-content-theme="b">
+              <div id="qustion_paid" data-role="collapsible">
                   <h3>
-                      ?איך עובר הכסף לצדקה
+                      איך עובר הכסף לצדקה
                   </h3>
-                  <div data-controltype="textblock">
+                  <div id="text_paid" data-controltype="textblock">
                       <p>
-                          <b>
-                              כל הסכום אשר המשתמש מעביר לזכות העמותה או התרומה מועבר ע"י עמותת תרומה
-                              באפליקציה עבור העמותה , כמו בחיוב כרטיס אשראי
-                          </b>
+                          הכסף מועבר ע"י "צדקה" ישירות לעמותה אותה בחרתם. החיוב מבוצע ככל חיוב אחר
+                          בכרטיס האשראי
                       </p>
                   </div>
               </div>
-              <div data-role="collapsible">
-                  <h3>
-                      QR וכרטיסי ביקור
-                  </h3>
-                  <div data-controltype="textblock">
-                      <p style="text-align: right;">
-                          כאשר רוצים לסרוק קוד של עמותה&nbsp;
-                      </p>
-                      <p style="text-align: right;">
-                          ניתן ללחוץ בעמוד התרומה על סרוק עמותה&nbsp;
-                      </p>
-                      <p style="text-align: right;">
-                          (מפרסומות או מכרטיס ביקור)
-                      </p>
-                      <p style="text-align: right;">
-                          שם העמותה תופיע מעתה במועדפים שלי
-                      </p>
-                  </div>
-              </div>
-              <div data-role="collapsible">
+              <div id="qustion_my_account" data-role="collapsible">
                   <h3>
                       מעקב אחר תרומות ופעילות
                   </h3>
-                  <div data-controltype="textblock">
+                  <div id="text_my_account" data-controltype="textblock">
                       <p>
+                          ניתן לעקוב אחר היסטוריית התרומות עד לתקופה של 12 חודשים על ידי מעבר ל
                           <b>
-                              ניתן לעקוב אחר התרומות של המשתמש והפעילות שלו באפליקצייה עד לזמן של שישה
-                              חודשים&nbsp;
+                              חשבון שלי
                           </b>
-                      </p>
-                      <p>
+                          &gt;&nbsp;
                           <b>
-                              בעמוד החשבון שלי ובלחיצה על הקופה שלי
+                              הקופה שלי
                           </b>
                       </p>
                   </div>
               </div>
-              <div data-role="collapsible">
+              <div id="qustion_about" data-role="collapsible">
                   <h3>
                       אודות
                   </h3>
-                  <div data-controltype="textblock">
+                  <div id="text_about" data-controltype="textblock">
                       <p>
                           <b>
-                              עמותת צדקה באפליקציה שמה עצמה מטרה לעזור ולסייע הן לעמותות והן לתורמים
-                              בדרך פשוטה וטכנולוגית זו
+                              "צדקה" שמה לה למטרה להוות גורם טכנולוגי המקשר באופן מידי בין תורמים ועמותות
                           </b>
                       </p>
                   </div>
               </div>
-              <div data-role="collapsible">
+              <div id="qustion_secutory" data-role="collapsible">
                   <h3>
                       בטחון ואופן החיוב
                   </h3>
-                  <div data-controltype="textblock">
-                      <p>
-                          <b>
-                              על מנת לדאוג לבטחון השמתמשים אפלקציה זו משתמשת ברמת אבטחה גבוהה ומאושרת
-                              על ידי גורמי החיוב והתקנות לחיוב כספים
-                          </b>
+                  <div id="text_secutry" data-controltype="textblock">
+                      <ul>
+                          <li>
+                              על מנת לדאוג לביטחון כספכם "צדקה" משתמשת ברמת אבטחה גבוהה המאושרת לשימוש
+                              על ידי גורמי החיוב.
+                          </li>
+                      </ul>
+                      <p dir="RTL">
+                          "צדקה" מתנהלת על פי התקנות הנדרשות להעברת כספים ברשת.
                       </p>
                       <p>
-                          <b>
-                              בנוסף ניתן לבחור בחיוב על ידי כרטיס אשראי או חיוב על ידי&nbsp;
-                          </b>
-                      </p>
-                      <p>
-                          <b>
-                              PAYPAL&nbsp;
-                          </b>
-                      </p>
-                      <p>
-                          <b>
-                              לרמת בטיחות מקסימלית
-                          </b>
+                          בחיוב בכרטיס אשראי &nbsp;ברמת אבטחה מקסימאלית.&nbsp;
                       </p>
                   </div>
               </div>
           </div>
+          <a id="button_contact" data-role="button" data-theme="a" href="#Contact_page">
+              צור קשר
+          </a>
       </div>
   </div>
   <div data-role="page" data-control-title="דף חיוב " id="page13">
@@ -996,7 +1092,7 @@
           </div>
       </div>
   </div>
-  <div data-role="page" data-control-title="Search Organization" data-theme="b"
+  <div data-role="page" data-control-title="Search_Organization" data-theme="b"
   id="page14">
       <div data-theme="a" data-role="header">
           <a data-role="button" href="#page1" data-icon="ios-pack-color-home" data-iconpos="left"
@@ -1059,7 +1155,7 @@
                       </a>
                   </li>
                   <li>
-                      <a href="#page4" data-transition="fade" data-theme="" data-icon="">
+                      <a href="#paid_page" data-transition="fade" data-theme="" data-icon="">
                           חזור
                       </a>
                   </li>
@@ -1067,51 +1163,53 @@
           </div>
       </div>
   </div>
-  <div data-role="page" data-control-title="פעם ראשונה לפני תיקון" id="page15">
-      <div data-role="content">
-      </div>
-  </div>
-  <div data-role="page" data-control-title="Calculator" data-theme="b" id="page16">
-      <div data-theme="a" data-role="header">
-          <a data-role="button" href="#page1" class="ui-btn-right">
+  <div data-role="page" data-control-title="Calculator" data-theme="b" id="Calculator_page">
+      <div id="headear" data-theme="a" data-role="header">
+          <a id="button_home" data-role="button" href="#page1" class="ui-btn-right">
               בית
           </a>
-          <a data-role="button" data-direction="reverse" data-transition="flip"
-          href="#page8" class="ui-btn-left">
+          <a id="button_commitment" data-role="button" data-direction="reverse"
+          data-transition="flip" href="#Commitment_page" data-icon="ios-pack-color-back"
+          data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               חישוב תרומות
           </a>
-          <h3>
+          <h3 id="heading_title">
               מחשבון
           </h3>
       </div>
       <div data-role="content">
-          <h2>
+          <h2 id="heading_2_calclator">
               מחשבון לחישוב מעשרות
           </h2>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput20">
+              <label for="input_Percent">
                   אחוז התרומה מההכנסות
               </label>
-              <input name="" id="textinput20" placeholder="10 %" value="" type="number">
+              <input name="" id="input_Percent" placeholder="10 %" value="10" type="number">
           </div>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="textinput22">
+              <label for="input_income">
                   ההכנסות שלי
               </label>
-              <input name="" id="textinput22" placeholder="ש&quot;ח" value="" type="number">
+              <input name="" id="input_income" placeholder="ש&quot;ח" value="" type="number">
           </div>
           <div data-role="fieldcontain" data-controltype="textarea">
-              <label for="textarea1">
+              <label for="text_Calculation">
                   סך התרומה לפי חישוב
               </label>
-              <textarea name="" id="textarea1" placeholder="ש&quot;ח"></textarea>
+              <textarea name="" id="text_Calculation" readonly="readonly" >0</textarea>
           </div>
-          <a data-role="button" data-transition="flip" href="#page8">
+          <a id="button_calculator_ok" data-role="button" data-transition="flip"
+          href="#Commitment_page" data-icon="ios-pack-color-check" data-iconpos="left"
+          data-iconsize="26">
               אישור
           </a>
       </div>
   </div>
-       
+  <div data-role="page" data-control-title="new_account" data-theme="b"
+  id="new_account_page">
+      <div data-role="content" style="padding: 2px">
+      </div>
+  </div>
 </body>
-
 </html>
