@@ -29,9 +29,11 @@
   <link href="css/jquery.mobile.theme-1.3.1.min.css" rel="stylesheet">
   <link href="css/jquery-mobile.css" rel="stylesheet">
   <link href="css/jquery.mobile.structure-1.3.1.min.css" rel="stylesheet">
+ 
 
   <script src="js/jquery-1.9.1.min.js"></script>
   <script src="js/jquery.mobile-1.3.1.min.js"></script>
+      
         <script type="text/javascript" src="js/index.js"></script>
          <script type="text/javascript" src="phonegap.js"></script>     
   <script src="js/tzdaka.js"></script>
@@ -327,22 +329,23 @@
           </div>
       </div>
   </div>
+       
   <div data-role="page" data-control-title="paid" data-theme="b" id="paid_page">
       <div data-role="panel" id="panel5" data-position="left" data-display="push"
       data-theme="b">
           <ul data-role="listview" data-divider-theme="b" data-inset="false">
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       יד שרה
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       מחשבה טובה
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       כוח לתת
                   </a>
               </li>
@@ -352,17 +355,17 @@
       data-theme="b">
           <ul data-role="listview" data-divider-theme="b" data-inset="false">
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       יד שרה
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       מחשבה טובה
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       כוח לתת
                   </a>
               </li>
@@ -372,17 +375,17 @@
       data-theme="b">
           <ul data-role="listview" data-divider-theme="b" data-inset="false">
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       יד שרה
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       מחשבה טובה
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       כוח לתת
                   </a>
               </li>
@@ -392,17 +395,17 @@
       data-theme="b">
           <ul data-role="listview" data-divider-theme="b" data-inset="false">
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       עזר מציון
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       שערי צדק
                   </a>
               </li>
               <li data-theme="a">
-                  <a href="#page13" data-transition="slide">
+                  <a href="#page_donate" data-transition="slide">
                       עזרה למרפא
                   </a>
               </li>
@@ -418,15 +421,16 @@
           </h3>
       </div>
       <div data-role="content">
+         
           <a id="button_Credit_commitment" data-role="button" href="#Credit_commitment_page">
               זיכוי תרומה מזדמנת
           </a>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="fast_serch_Organization">
-                  חיפוש מהיר
-              </label>
-              <input name="" id="fast_serch_Organization" placeholder="שם עמותה / מס עמותה"
-              value="" type="text" data-mini="true">
+               <div id="companies_dialog">
+                  
+          <ul id="companyList" class="contact-list" data-role="listview" data-filter="true"></ul>
+              <input type="hidden" id="companyid_todonate"/>
+              </div>
           </div>
           <div data-role="fieldcontain" data-controltype="textinput">
               <label for="some_paid">
@@ -465,7 +469,7 @@
                   </a>
               </div>
           </div>
-          <a id="button_paid_ok" data-role="button" data-theme="a" href="#page13"
+          <a id="button_paid_ok" data-role="button" data-theme="a" href="#page_donate"
           data-icon="ios-pack-color-check" data-iconpos="left" data-iconsize="26">
               אשר תרומה
           </a>
@@ -493,7 +497,7 @@
           <div id="button_ADV" data-role="navbar" data-iconpos="top">
               <ul>
                   <li>
-                      <a href="#page13" data-transition="flow" data-theme="b" data-icon="arrow-l">
+                      <a href="#page_donate" data-transition="flow" data-theme="b" data-icon="arrow-l">
                           וועד הרבנים לעניני צדקה . לחץ כאן
                       </a>
                   </li>
@@ -788,7 +792,7 @@
           </div>
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a id="button_paid total" data-role="button" href="#paid_page">
+                  <a id="button_paid_total" data-role="button" href="#paid_page">
                       לתרומה
                   </a>
               </div>
@@ -1024,7 +1028,7 @@
           </a>
       </div>
   </div>
-  <div data-role="page" data-control-title="דף חיוב " id="page13">
+  <div data-role="page" data-control-title="דף חיוב " id="page_donate">
       <div data-theme="a" data-role="header">
           <a data-role="button" href="#page1" data-icon="ios-pack-color-home" data-iconpos="left"
           data-iconsize="26" class="ui-btn-left">
@@ -1040,7 +1044,7 @@
                   <h5>
                       מס עמותה:
                   </h5>
-                  <h4>
+                  <h4 id="donate_org_id">
                       58-456982
                   </h4>
               </div>
@@ -1048,7 +1052,7 @@
                   <h5>
                       שםהעמותה:
                   </h5>
-                  <h4>
+                  <h4 id="donate_org_name">
                       עזר מציון
                   </h4>
               </div>
@@ -1059,10 +1063,10 @@
           </h3>
           <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
           <h3>
-              סכום התרומה 45 ש"ח
+              סכום התרומה <span id="donate_sum">0</span> ש"ח
           </h3>
           <div style=" text-align:center" data-controltype="image">
-              <img style="width: 200px; height: 180px" src="img/images.jpg">
+              <img id="donate_org_logo" style="width: 200px; height: 180px" src="img/images.jpg">
           </div>
           <div data-controltype="textblock">
               <p style="text-align: center;">
@@ -1074,17 +1078,17 @@
           <div data-role="navbar" data-iconpos="top">
               <ul>
                   <li>
-                      <a href="#page13" data-transition="fade" data-theme="" data-icon="">
+                      <a href="#page_donate" data-transition="fade" data-theme="" data-icon="">
                           הקופה שלי
                       </a>
                   </li>
                   <li>
-                      <a href="#page13" data-transition="fade" data-theme="" data-icon="">
+                      <a href="#page_donate" data-transition="fade" data-theme="" data-icon="">
                           כרטיס אשראי
                       </a>
                   </li>
                   <li>
-                      <a href="#page13" data-transition="fade" data-theme="" data-icon="">
+                      <a href="#page_donate" data-transition="fade" data-theme="" data-icon="">
                           PAYPAL
                       </a>
                   </li>
@@ -1093,7 +1097,7 @@
       </div>
   </div>
   <div data-role="page" data-control-title="Search_Organization" data-theme="b"
-  id="page14">
+  id="Search_Organization">
       <div data-theme="a" data-role="header">
           <a data-role="button" href="#page1" data-icon="ios-pack-color-home" data-iconpos="left"
           data-iconsize="26" class="ui-btn-left">
@@ -1104,12 +1108,8 @@
           </h3>
       </div>
       <div data-role="content">
-          <div data-role="fieldcontain" data-controltype="searchinput">
-              <label for="searchinput1">
-                  חיפוש לפי שם / מס עמותה
-              </label>
-              <input name="" id="searchinput1" placeholder="" value="" type="search">
-          </div>
+         
+            <ul id="Organization_companyList" class="contact-list" data-role="listview" data-filter="true"></ul>
           <div data-controltype="textblock">
               <p>
                   <b>
@@ -1150,7 +1150,7 @@
           <div data-role="navbar" data-iconpos="top">
               <ul>
                   <li>
-                      <a href="#page13" data-transition="fade" data-theme="" data-icon="">
+                      <a href="#page_donate" data-transition="fade" data-theme="" data-icon="">
                           לתרומה
                       </a>
                   </li>

@@ -77,13 +77,17 @@ function checkConnection() {
              console.log(e);}
  }
 function loadDetails(){
+    
     try{
+        if(!loadLocaldateils()){
      jQuery.support.cors = true;
          $.mobile.loading( 'show', {
                 text: 'Please wait..',
                 textVisible: true,
                 theme: 'b'
             });
+        }
+        //return;
         var url="http://customers.bontact.com/App_tromut/post.php?func=startAndGetObjet&token=hffd5hkjmnd-sdfdf-987fnj-kkk";
     $.post(url, {}, function(res) {     
               res=$.parseJSON(res);
@@ -96,7 +100,10 @@ function loadDetails(){
            
             if(res.status == 200) {
                 DonateObject=res;
+                saveInLocalStorge();
+                /*--*/
                 
+                /*--*/
             }
              else{
             alert(res.status);
@@ -108,4 +115,24 @@ function loadDetails(){
     {
     alert(e);
     }
+}
+function loadLocaldateils()
+{
+
+// Put the object into storage
+//localStorage.setItem('testObject', JSON.stringify(testObject));
+
+// Retrieve the object from storage
+var retrievedObject = localStorage.getItem('DonateObject');
+
+console.log('DonateObject: ', retrievedObject==null);
+    if(retrievedObject==null)
+        return false;
+   DonateObject= JSON.parse(retrievedObject)
+console.log('retrievedObject: ', JSON.parse(retrievedObject));
+    return true;
+}
+function saveInLocalStorge()
+{
+     localStorage.setItem('DonateObject', JSON.stringify(DonateObject));               
 }

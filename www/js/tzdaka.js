@@ -6,6 +6,7 @@ $(function() {
    $(".heading_paid_this_month").text(DonateObject.actions.donated);
                $(".heading_Balance_billing").text(DonateObject.actions.todonate);
                $(".heading_Tax_credit").text(DonateObject.actions.taxdebit);
+       console.log(DonateObject.actions);
    }
     
     
@@ -53,9 +54,11 @@ $(function() {
             console.log(data);
             sendAjax(data,function(result){
                 if(result.status==200){
+                    var newAction={"comments":description,"date":Date.now(),"debit":1,"id":0,"sum":sum,"userid":DonateObject.user.id};
                     DonateObject.actions.todonate+=parseFloat(sum);
+                    DonateObject.actions.details.actions.push(newAction);
                     showBalance();
-                    $("#input_total_paid").val('')
+                    $("#input_total_paid").val('');
                 }
                 else{
                 alert(res);
@@ -67,6 +70,10 @@ $(function() {
         }
     });
     
+     $("#button_paid_total").click(function(){
+         $("#some_paid").val($("#input_total_paid").val());
+     });
+   
     
     
     
@@ -102,6 +109,76 @@ $(function() {
         
       return false;
     });
+    
+    
+    
+     $(document).on( "pageshow",'#paid_page', function( event, ui ) {
+         $("#companies_dialog input").attr("placeholder","חיפוש מהיר / שם עמותה");
+         $('#companyList').html('');
+         
+         $("#companies_dialog input").click(function(){
+             $('#companyList').html('');
+         for (var key in DonateObject.companies.companies) {
+              var comp=DonateObject.companies.companies[key];
+              var aaa = "<li compid='"+comp.id+"' compname='"+comp.name+"'><a href='#' >" +
+                "<img class='userIco' src='"+comp.logo+"'/>"+ 
+                "<h4>"+comp.name + "</h4>"+ 
+                "<p><label>"+comp.comments+"</label></p>"+
+               // "<span class='ui-li-count surferTime'>" + "00:00:00" + "</span>"+
+                "</a>"+
+                "</li>";
+               $('#companyList').append(aaa);
+          }
+           $('#companyList').listview('refresh');
+             $('#companyList').children('li').on('click', function () {
+  
+                 selectCompany($(this).attr('compname'),$(this).attr('compid'));
+});
+         })
+          
+        // $("#companies_dialog input").val('awww');
+   
+    
+    });
+    
+      $(document).on( "pageshow",'#Search_Organization', function( event, ui ) {
+          for (var key in DonateObject.companies.companies) {
+              var comp=DonateObject.companies.companies[key];
+              var aaa = "<li compid='"+comp.id+"' compname='"+comp.name+"'><a href='#' >" +
+                "<img class='userIco' src='"+comp.logo+"'/>"+ 
+                "<h4>"+comp.name + "</h4>"+ 
+                "<p><label>"+comp.comments+"</label></p>"+
+               // "<span class='ui-li-count surferTime'>" + "00:00:00" + "</span>"+
+                "</a>"+
+                "</li>";
+               $('#Organization_companyList').append(aaa);
+          }
+           $('#Organization_companyList').listview('refresh');
+      });
+    
+     $(document).on( "pageshow",'#page_donate', function( event, ui ) {
+        //setDonateDetails();
+     });
+    $("#button_paid_ok").click(function(){
+        var sum=$("#some_paid").val();
+        var organizationid=$("#companyid_todonate").val();
+        if(organizationid==""||parseFloat(organizationid)<=0)
+        {
+        alert("לא נבחרה עמותה");
+            return false;
+        }
+        
+        if(sum==""||parseFloat(sum)<=0)
+        {
+        alert("סכום שגוי");
+            return false;
+        }
+        setDonateDetails(organizationid,sum);
+    });
+    
+    
+    
+    
         //Insert code here
    
         });
@@ -134,5 +211,31 @@ function sendAjax(param,callback){
 });
     
 }
-
+function selectCompany(name, id)
+{
+$("#companies_dialog input").val("שם העמותה: "+name);
+    $('#companyList').html('');
+    $("#companyid_todonate").val(id);
+}
+function setDonateDetails(organizationid,sum)
+{
+    //alert(organizationid);
+    var comp=findOrganization(organizationid);
+    if(comp==null)
+        alert(organizationid);
+    else{
+    $("#donate_org_id").text(comp.org_number);
+    $("#donate_org_name").text(comp.name);
+    $("#donate_sum").text(sum);
+             $("#donate_org_logo").attr("src",comp.logo);
+}
+}
+function findOrganization(id)
+{
+for (var key in DonateObject.companies.companies) {
+    if(DonateObject.companies.companies[key].id==id)
+        return DonateObject.companies.companies[key];
+}
+    return null;
+}
 
