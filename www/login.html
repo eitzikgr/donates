@@ -1,0 +1,71 @@
+
+
+
+<div data-role="dialog" id="dialog_login" data-url="dialog" tabindex="0" class="ui-page ui-body-c ui-dialog ui-overlay-a ui-page-active" style="min-height: 899px;"><div role="dialog" class="ui-dialog-contain ui-corner-all ui-overlay-shadow">
+    <div data-role="header" class="ui-corner-top ui-header ui-bar-a" role="banner"><a href="#first_page" data-icon="delete" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" title="Close" data-transition="flip" data-direction="reverse"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Close</span><span class="ui-icon ui-icon-delete ui-icon-shadow">&nbsp;</span></span></a>
+        <h1 class="ui-title" role="heading" aria-level="1">
+            ברוכים הבאים
+        </h1>
+    </div>
+    <div data-role="content" class="ui-content ui-body-c" role="main">
+        <p>
+            <div data-role="fieldcontain" data-controltype="textinput">
+              <label for="userlogin_email">אימייל</label>
+              <input name="" id="userlogin_email" placeholder="אימייל" value="" type="email"
+              data-mini="true">
+          </div>
+          <div data-role="fieldcontain" data-controltype="textinput">
+              <label for="userlogin_pass">סיסמא</label>
+              <input name="" id="userlogin_pass" placeholder="סיסמה" value="" type="password"
+              data-mini="true">
+          </div>
+        <a id="btn_login" data-role="button" href="#home_page">
+                      כניסה
+                  </a>
+        </p>
+        <p>
+            <a href="#first_page" class="ui-link">חזור</a>
+        </p>
+    </div>
+    <div data-role="footer" class="ui-corner-bottom ui-footer ui-bar-a" role="contentinfo">
+        <h4 class="ui-title" role="heading" aria-level="1">תרומה באפליקציה
+        </h4>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+     //Login PAge
+    $("#btn_login").click(function(){
+        var username=$("#userlogin_email").val();
+        var pass=$("#userlogin_pass").val();
+        $.mobile.changePage("#home_page");
+       // alert(username+ " - "+pass);
+        data="func=signin&username="+username+"&pass="+pass;
+         jQuery.support.cors = true;
+         $.mobile.loading( 'show', {
+                text: 'Please wait..',
+                textVisible: true,
+                theme: 'b'
+            });
+        sendAjax(data,function(result){
+             $.mobile.loading('hide');
+            console.log("Signin: ");
+            console.log(result);
+            //$.mobile.changePage("#home_page");
+                if(result.status==200){
+                   // return true;
+                    current_user=result.user;
+                    localStorage.setItem('current_user', JSON.stringify(current_user)); 
+                     $.mobile.changePage("index.html#home_page");
+                    //return true;
+                }
+            else{
+                alert("שם משתמש או סיסמא שגויים");
+                return false;
+            }
+        });
+        return false;
+    });
+</script>
+</div>

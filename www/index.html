@@ -68,7 +68,7 @@
                   </span>
               </p>
               <ul>
-                  <ul>
+                  <ul data-inset="true" data-role="listview">
                       <li style="text-align: rate;" data-mce-style="text-align: rate;">
                           <span style="font-size: large;" data-mce-style="font-size: large;">
                               מעקב אחר תרומות
@@ -76,11 +76,8 @@
                       </li>
                       <li style="text-align: rate;" data-mce-style="text-align: rate;">
                           <span style="font-size: large;" data-mce-style="font-size: large;">
-                              הצבת יעדי
-                          </span>
-                          <span style="font-size: large;" data-mce-style="font-size: large;">
-                              ם
-                          </span>
+                              הצבת יעדים
+                          </span>                         
                       </li>
                       <li style="text-align: rate;" data-mce-style="text-align: rate;">
                           <span style="font-size: large;" data-mce-style="font-size: large;">
@@ -100,40 +97,40 @@
                   </ul>
               </ul>
           </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <input name="" id="User_selphone" placeholder="מספר טלפון" value="" type="tel"
-              data-mini="true">
-          </div>
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <input name="" id="user_password" placeholder="סיסמה" value="" type="password"
-              data-mini="true">
-          </div>
+         
           <div class="ui-grid-a">
               <div class="ui-block-a">
-                  <a id="login" data-role="button" href="#home_page">
+                  <a id="login" data-role="button"  href="login.html" data-rel="dialog" data-transition="pop">
                       התחבר
                   </a>
               </div>
               <div class="ui-block-b">
-                  <a id="new_account" data-role="button" href="#home_page">
+                  <a id="new_account" data-role="button" href="signup.html" data-rel="dialog" data-transition="pop">
                       משתמש חדש
                   </a>
               </div>
           </div>
-          <div class="ui-grid-a">
+          <div >
+                  <a id="afyer_login" data-role="button" data-mini="true" href="#home_page">
+                      הרשם בהמשך
+                  </a>
+              </div>
+          <!--<div class="ui-grid-a">
               <div class="ui-block-a">
                   <a id="afyer_login" data-role="button" href="#home_page">
                       הרשם בהמשך
                   </a>
               </div>
+             
               <div class="ui-block-b">
                   <a id="login_facebook" data-role="button" href="#home_page">
                       פייסבוק
                   </a>
               </div>
-          </div>
+          </div>-->
       </div>
   </div>
+       
   <div data-role="page" data-control-title="Extended_Help" data-theme="b"  id="Extended_Help_page">
       <div id="title" data-theme="a" data-role="header">
           <h3 id="title_Extended_Help">
@@ -612,7 +609,7 @@
           data-iconpos="left" class="ui-btn-right">
               הגדרות
           </a>
-          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          <a id="button_home" data-role="button" href="#home_page" data-icon="ios-pack-color-home"
           data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
@@ -663,7 +660,7 @@
           data-iconpos="left" data-iconsize="26" class="ui-btn-right">
               התנתק
           </a>
-          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          <a id="button_home" data-role="button" href="#home_page" data-icon="ios-pack-color-home"
           data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
@@ -749,7 +746,7 @@
           data-iconpos="left" data-iconsize="26" class="ui-btn-right">
               דף חשבון
           </a>
-          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          <a id="button_home" data-role="button" href="#home_page" data-icon="ios-pack-color-home"
           data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
@@ -811,7 +808,7 @@
           data-iconpos="left" data-iconsize="26" class="ui-btn-right">
               דף חשבון
           </a>
-          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          <a id="button_home" data-role="button" href="#home_page" data-icon="ios-pack-color-home"
           data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
@@ -863,7 +860,7 @@
   </div>
   <div data-role="page" data-control-title="Contact" data-theme="b" id="Contact_page">
       <div id="heding" data-theme="a" data-role="header">
-          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          <a id="button_home" data-role="button" href="#home_page" data-icon="ios-pack-color-home"
           data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
@@ -912,7 +909,7 @@
               </label>
               <input name="" id="input_Reason" placeholder="" value="" type="text">
           </div>
-          <a id="button_send" data-role="button" href="#page1">
+          <a id="button_send" data-role="button" href="#home_page">
               אישור
           </a>
           <h2 id="heding_Personal_Information">
@@ -949,7 +946,7 @@
   </div>
   <div data-role="page" data-control-title="help" data-theme="b" id="help_page">
       <div id="header" data-theme="a" data-role="header">
-          <a id="button_home" data-role="button" href="#page1" data-icon="ios-pack-color-home"
+          <a id="button_home" data-role="button" href="#home_page" data-icon="ios-pack-color-home"
           data-iconpos="left" data-iconsize="26" class="ui-btn-left">
               בית
           </a>
@@ -1030,7 +1027,7 @@
   </div>
   <div data-role="page" data-control-title="דף חיוב " id="page_donate">
       <div data-theme="a" data-role="header">
-          <a data-role="button" href="#page1" data-icon="ios-pack-color-home" data-iconpos="left"
+          <a data-role="button" href="#home_page" data-icon="ios-pack-color-home" data-iconpos="left"
           data-iconsize="26" class="ui-btn-left">
               בית
           </a>
@@ -1099,7 +1096,7 @@
   <div data-role="page" data-control-title="Search_Organization" data-theme="b"
   id="Search_Organization">
       <div data-theme="a" data-role="header">
-          <a data-role="button" href="#page1" data-icon="ios-pack-color-home" data-iconpos="left"
+          <a data-role="button" href="#home_page" data-icon="ios-pack-color-home" data-iconpos="left"
           data-iconsize="26" class="ui-btn-left">
               בית
           </a>
@@ -1165,7 +1162,7 @@
   </div>
   <div data-role="page" data-control-title="Calculator" data-theme="b" id="Calculator_page">
       <div id="headear" data-theme="a" data-role="header">
-          <a id="button_home" data-role="button" href="#page1" class="ui-btn-right">
+          <a id="button_home" data-role="button" href="#home_page" class="ui-btn-right">
               בית
           </a>
           <a id="button_commitment" data-role="button" data-direction="reverse"

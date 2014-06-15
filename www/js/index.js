@@ -77,7 +77,8 @@ function checkConnection() {
              console.log(e);}
  }
 function loadDetails(){
-    
+    if(userexsist())
+        $.mobile.changePage( "#home_page");
     try{
         if(!loadLocaldateils()){
      jQuery.support.cors = true;
@@ -135,4 +136,14 @@ console.log('retrievedObject: ', JSON.parse(retrievedObject));
 function saveInLocalStorge()
 {
      localStorage.setItem('DonateObject', JSON.stringify(DonateObject));               
+}
+var current_user=null;
+function userexsist()
+{
+    var retrievedObject = localStorage.getItem('current_user');
+     if(retrievedObject==null)
+        return false;
+     current_user= JSON.parse(retrievedObject)
+console.log('current_user: ', JSON.parse(retrievedObject));
+    return true;
 }
