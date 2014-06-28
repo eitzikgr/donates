@@ -89,7 +89,7 @@ function loadDetails(){
             });
         }
         //return;
-        var url="http://customers.bontact.com/App_tromut/post.php?func=startAndGetObjet&token=hffd5hkjmnd-sdfdf-987fnj-kkk";
+        var url="http://www.mifneh.ccc-cloud.com/App_tromut/post.php?func=startAndGetObjet&token=hffd5hkjmnd-sdfdf-987fnj-kkk";
     $.post(url, {}, function(res) {     
               res=$.parseJSON(res);
      // alert("convert json");

@@ -115,3 +115,7 @@ h1 {
 }
 .ui-content{direction:rtl}
 #first_page ul li{text-align:right}
+#pelecardfrm{
+    width:100%;
+    height:500px;
+}

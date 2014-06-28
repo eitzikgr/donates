@@ -192,7 +192,7 @@ function sendAjax(param,callback){
                 textVisible: true,
                 theme: 'b'
             });
-        var url="http://customers.bontact.com/App_tromut/post.php";
+        var url="http://www.mifneh.ccc-cloud.com/App_tromut/post.php";
     
     $.ajax({
   type: "get",
@@ -228,6 +228,13 @@ function setDonateDetails(organizationid,sum)
     $("#donate_org_name").text(comp.name);
     $("#donate_sum").text(sum);
              $("#donate_org_logo").attr("src",comp.logo);
+        var url="http://www.mifneh.ccc-cloud.com/App_tromut/pelecard/pre.php";
+        url+="?CreditCardHolder="+DonateObject.user.username;
+        url+="&total="+parseInt(sum*100);
+        url+="&paramx="+DonateObject.user.id+"-"+comp.org_number;
+        console.log(url);
+        //http://www.mifneh.ccc-cloud.com/App_tromut/pelecard/pre.php?CreditCardHolder=david gur&paramx=050505&total=500
+        $("#pelecardfrm").attr("src",url);
 }
 }
 function findOrganization(id)
