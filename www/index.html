@@ -1073,9 +1073,39 @@
                   </b>
               </p>
           </div>
-           <div>
-            <iframe id="pelecardfrm" frameborder="0" src=""></iframe>
+           <div id="panel_carddetails">
+           <!-- <iframe id="pelecardfrm" frameborder="0" src=""></iframe>-->
+                <div data-role="fieldcontain" data-controltype="textinput">
+              <label for="card_number">
+                  מספר כרטיס אשראי
+              </label>
+              <input name="" id="card_number" placeholder="" value="" type="text">
           </div>
+          <div data-role="fieldcontain" data-controltype="textinput">
+              <label for="card_expired">
+                  תוקף
+              </label>
+              <input type="month" name="" id="card_expired" placeholder="" value="">
+          </div>
+          <div data-role="fieldcontain" data-controltype="textinput">
+              <label for="card_ownerid">
+                  מספר זהות
+              </label>
+              <input name="" id="card_ownerid" placeholder="" value="" type="text">
+          </div>
+               <div data-role="fieldcontain" data-controltype="textinput">
+              <label for="card_cvv">
+                  cvv
+              </label>
+              <input name="" id="card_cvv" placeholder="" value="" type="number" maxlength="3">
+          </div>
+          <a id="card_send" data-role="button" href="#">
+              אישור
+          </a>
+          </div>
+          <div id="panel_cardok" style="display:none">
+              <h1>תודה על תרומתך!</h1>
+              </div>
          <!-- <div data-role="navbar" data-iconpos="top">
               <ul>
                   <li>

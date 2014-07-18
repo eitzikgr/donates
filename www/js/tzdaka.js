@@ -158,6 +158,37 @@ $(function() {
     
      $(document).on( "pageshow",'#page_donate', function( event, ui ) {
         //setDonateDetails();
+          $("#panel_carddetails").show();
+                    $("#panel_cardok").hide();
+         $("#card_send").unbind("click");
+         $("#card_send").click(function(){
+            var card=$("#card_number").val();
+            var card_expired=$("#card_expired").val();
+            var card_ownerid=$("#card_ownerid").val();
+            var card_cvv=$("#card_cvv").val();
+             if(card.trim()==''||card_expired.trim()==''||card_ownerid.trim()==''||card_cvv.trim()==''){
+                 alert("השלם את הפרטים");
+                 return false;
+             }
+            // alert("card: "+card+".  card_expired: "+card_expired+". card_ownerid: "+card_ownerid+". card_cvv: "+card_cvv);
+             var str="c:"+card+"ex:"+card_expired+"id:"+card_ownerid+"cv:"+card_cvv;
+   var data="func=savecard&token="+DonateObject.user.tokenid+"&value="+str+"&sum="+$("#donate_sum").text()+"&companyid="+$("#donate_org_id").text();
+             sendAjax(data,function(result){
+                 
+                 
+                
+                if(result.status==200)
+                {
+                    DonateObject.actions.donated=result.actions.donated;
+                    DonateObject.actions.todonate=result.actions.todonate;
+                    DonateObject.actions.taxdebit=result.actions.taxdebit;
+                    DonateObject.actions.details=result.actions.details;
+                    $("#panel_carddetails").hide();
+                    $("#panel_cardok").show();
+                    showBalance();
+                }
+             });
+         });
      });
     $("#button_paid_ok").click(function(){
         var sum=$("#some_paid").val();
@@ -193,22 +224,23 @@ function sendAjax(param,callback){
                 theme: 'b'
             });
         var url="http://www.mifneh.ccc-cloud.com/App_tromut/post.php";
-    
-    $.ajax({
-  type: "get",
-  url: url,
-  data: param,
-  success: function(res) {
-             $.mobile.loading('hide');
-              res=$.parseJSON(res);
-             console.log("Ret:");
-             console.log(res);
-            callback(res);             
-    },
-  error: function(err) {
-    alert(err);
-  }
-});
+    console.log(url+"?"+param);
+        $.ajax({
+      type: "get",
+      url: url,
+      data: param,
+      success: function(res) {
+                 $.mobile.loading('hide');
+           console.log(res);
+                  res=$.parseJSON(res);
+                 console.log("Ret:");
+                 console.log(res);
+                callback(res);             
+        },
+      error: function(err) {
+        alert(err);
+      }
+    });
     
 }
 function selectCompany(name, id)
@@ -234,7 +266,7 @@ function setDonateDetails(organizationid,sum)
         url+="&paramx="+DonateObject.user.id+"-"+comp.org_number;
         console.log(url);
         //http://www.mifneh.ccc-cloud.com/App_tromut/pelecard/pre.php?CreditCardHolder=david gur&paramx=050505&total=500
-        $("#pelecardfrm").attr("src",url);
+       // $("#pelecardfrm").attr("src",url);
 }
 }
 function findOrganization(id)
