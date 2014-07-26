@@ -1,7 +1,7 @@
 var DonateObject;
  
 $(function() {
-      
+       
    function showBalance(){
    $(".heading_paid_this_month").text(DonateObject.actions.donated);
                $(".heading_Balance_billing").text(DonateObject.actions.todonate);
@@ -170,9 +170,11 @@ $(function() {
                  alert("השלם את הפרטים");
                  return false;
              }
+             var radio_Recurring_Billing=$("input:radio[name=recbilling]:checked").val();
+             alert(radio_Recurring_Billing);
             // alert("card: "+card+".  card_expired: "+card_expired+". card_ownerid: "+card_ownerid+". card_cvv: "+card_cvv);
              var str="c:"+card+"ex:"+card_expired+"id:"+card_ownerid+"cv:"+card_cvv;
-   var data="func=savecard&token="+DonateObject.user.tokenid+"&value="+str+"&sum="+$("#donate_sum").text()+"&companyid="+$("#donate_org_id").text();
+   var data="func=savecard&token="+DonateObject.user.tokenid+"&value="+str+"&sum="+$("#donate_sum").text()+"&companyid="+$("#donate_org_id").text()+"&recurring_Billing="+radio_Recurring_Billing;
              sendAjax(data,function(result){
                  
                  
@@ -207,10 +209,42 @@ $(function() {
         setDonateDetails(organizationid,sum);
     });
     
-    
+    $("#button_fredit_ok").click(function(){
+        if($("#input_credit").val()!=""){
+        
+            var sum=$("#input_credit").val();
+            var description=$("#input_Comment_credit").val();
+            var data="func=creditoutside&token="+DonateObject.user.tokenid+"&sum="+sum+"&companyid=0&description="+description;
+            console.log(data);
+            sendAjax(data,function(result){
+                if(result.status==200)
+                {
+                    DonateObject.actions.donated=result.actions.donated;
+                    DonateObject.actions.todonate=result.actions.todonate;
+                    DonateObject.actions.taxdebit=result.actions.taxdebit;
+                    DonateObject.actions.details=result.actions.details;
+                    $("#panel_carddetails").hide();
+                    $("#panel_cardok").show();
+                    showBalance();
+                }
+            });
+        }
+    });
     
    
         //Insert code here
+     $(document).on( "pageshow",'#My_Account_page', function( event, ui ) {
+         $("#donatesHistory").html('');
+        $(DonateObject.actions.details.actions).each(function(index,val){
+            if(val.sum>0){
+            console.log("val: "+val.sum+" ,index:"+index);
+                var organ=findOrganization_byOrgNumber(val.comments);
+            $("#donatesHistory").append('<li style="text-align: right;">'+
+					val.date+'&nbsp;<strong>ש"ח '+val.sum+'</strong>&nbsp;('+(organ!=null?organ.name:'תרומה מזדמנת')+')</h3>');
+            }
+        });
+          $('#donatesHistory').listview('refresh');
+     });
    
         });
 
@@ -277,4 +311,13 @@ for (var key in DonateObject.companies.companies) {
 }
     return null;
 }
+function findOrganization_byOrgNumber(org_number)
+{
+for (var key in DonateObject.companies.companies) {
+    if(DonateObject.companies.companies[key].org_number==org_number)
+        return DonateObject.companies.companies[key];
+}
+    return null;
+}
+
 

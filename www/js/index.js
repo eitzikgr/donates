@@ -74,10 +74,12 @@ function checkConnection() {
         //alert('Connection type: ' + states[networkState]);    
     }
      catch(e){console.log("Err: "+e);
-             console.log(e);}
+             console.log(e);
+             return true;}
  }
 function loadDetails(){
-    if(userexsist())
+    userexsist(function (status){
+    if(status)    
         $.mobile.changePage( "#home_page");
     try{
         if(!loadLocaldateils()){
@@ -89,8 +91,10 @@ function loadDetails(){
             });
         }
         //return;
-        var url="http://www.mifneh.ccc-cloud.com/App_tromut/post.php?func=startAndGetObjet&token=hffd5hkjmnd-sdfdf-987fnj-kkk";
-    $.post(url, {}, function(res) {     
+        console.log('current_user');
+        console.log(current_user);
+        var url="http://www.mifneh.ccc-cloud.com/App_tromut/post.php?func=startAndGetObjet&token="+current_user.tokenid;//hffd5hkjmnd-sdfdf-987fnj-kkk";
+    $.post(url, {}, function(res) { 
               res=$.parseJSON(res);
      // alert("convert json");
         
@@ -116,6 +120,7 @@ function loadDetails(){
     {
     alert(e);
     }
+        });
 }
 function loadLocaldateils()
 {
@@ -138,12 +143,36 @@ function saveInLocalStorge()
      localStorage.setItem('DonateObject', JSON.stringify(DonateObject));               
 }
 var current_user=null;
-function userexsist()
+function userexsist(callback)
 {
     var retrievedObject = localStorage.getItem('current_user');
      if(retrievedObject==null)
-        return false;
-     current_user= JSON.parse(retrievedObject)
-console.log('current_user: ', JSON.parse(retrievedObject));
-    return true;
+        createUserObject(function(status){
+            callback(current_user.loginstatus);
+        });
+    else{
+        current_user= JSON.parse(retrievedObject);
+//console.log('current_user: ', JSON.parse(retrievedObject));
+     callback(current_user.loginstatus);
+    }
+}
+function createUserObject(callback){
+    current_user=new Object();
+    current_user.tokenid=makeid();
+    current_user.loginstatus=false;
+    localStorage.setItem('current_user', JSON.stringify(current_user));
+    sendAjax("func=newuser&tokenid="+current_user.tokenid,function(callbackservice){
+       // alert(callbackservice.status);
+        callback(callbackservice.status);
+    });
+}
+function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 30; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
 }

@@ -55,6 +55,7 @@
             //$.mobile.changePage("#home_page");
                 if(result.status==200){
                    // return true;
+                    result.user.loginstatus=true;
                     current_user=result.user;
                     localStorage.setItem('current_user', JSON.stringify(current_user)); 
                      $.mobile.changePage("index.html#home_page");

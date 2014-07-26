@@ -473,15 +473,15 @@
           </a>
           <div id="radio_Recurring_Billing" data-role="fieldcontain" data-controltype="radiobuttons">
               <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                  <input id="radio3" name="" value="radio3" data-theme="d" type="radio">
+                  <input id="radio3" name="recbilling" checked="checked" value="single" data-theme="d" type="radio">
                   <label for="radio3">
                       חיוב חד פעמי
                   </label>
-                  <input id="radio1" name="" value="day" data-theme="d" type="radio">
+                  <input id="radio1" name="recbilling" value="day" data-theme="d" type="radio">
                   <label for="radio1">
                       חיוב יומי
                   </label>
-                  <input id="radio2" name="" value="month" data-theme="d" type="radio">
+                  <input id="radio2" name="recbilling" value="month" data-theme="d" type="radio">
                   <label for="radio2">
                       חיוב חודשי
                   </label>
@@ -525,7 +525,7 @@
       </div>
       <div data-role="panel" id="panel17" data-position="left" data-display="reveal"
       data-theme="a">
-          <ul data-role="listview" data-divider-theme="h" data-inset="false">
+          <ul  data-role="listview" data-divider-theme="h" data-inset="false">
               <li data-role="list-divider" role="heading">
                   פקודות היסטוריה
               </li>
@@ -633,7 +633,10 @@
                   </li>
               </ul>
           </div>
-          <a id="Monthly_charge" data-controltype="panelbutton" data-role="button"
+             <ol id="donatesHistory" class="contact-list" data-role="listview" style="text-align: right; direction:rtl" >
+           
+          </ol>
+         <!-- <a id="Monthly_charge" data-controltype="panelbutton" data-role="button"
           data-inline="false" href="#panel9" data-icon="bars" data-iconpos="left">
               באר החיים : חודשי : 50 ש"ח
           </a>
@@ -652,7 +655,7 @@
           <a id="History_liabilities" data-controltype="panelbutton" data-role="button"
           data-inline="false" href="#panel18" data-icon="bars" data-iconpos="left">
               התחייבות : 25/6/2014 : 350 ש"ח
-          </a>
+          </a>-->
       </div>
   </div>
   <div data-role="page" data-control-title="Settings" data-theme="b" id="Settings_page">
@@ -842,10 +845,10 @@
               </address>
           </div>
           <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="input_credit ">
+              <label for="input_credit">
                   סכום לזיכוי חשבון תרומה
               </label>
-              <input name="" id="input_credit " placeholder="ש&quot;ח " value="" type="number">
+              <input name="" id="input_credit" placeholder="ש&quot;ח " value="" type="number">
           </div>
           <div data-role="fieldcontain" data-controltype="textinput">
               <label for="input_Comment_credit">
